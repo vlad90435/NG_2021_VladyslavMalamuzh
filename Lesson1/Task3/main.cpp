@@ -4,16 +4,19 @@ using namespace std;
 
 int main()
 {
-    int oreshki,shishki,sobrano,oreshkov_shiske;
-    oreshki=shishki=sobrano=oreshkov_shiske=0;
+    int nuts=0;
+    int nuts_in_cone=0;
+    int cones=0;
+    int total=0;
+
     cout << "Skolko nuzhno oreshkov:\n";
-    cin >> oreshki;
+    cin >> nuts;
     cout << "Skolko oreshkov v shiske:\n";
-    cin >> oreshkov_shiske;
+    cin >> nuts_in_cone;
     cout << "Skolko ona sobrala:";
     cin >> shishki;
-    sobrano=oreshkov_shiske*shishki;
-    if(sobrano<oreshki){
+    total=nuts_in_cone*cones;
+    if(total<nuts){
         cout << "Pechalnaya situatsiya";
 
         }
@@ -21,6 +24,3 @@ int main()
             cout <<"Ogo mayesh garno shishok";
         }
     }
-
-
-

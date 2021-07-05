@@ -4,19 +4,21 @@ using namespace std;
 
 int main()
 {
-     int first_number,second_number,result,diya;
-    first_number=second_number=result=0;
+     int first_number=0;
+     int second_number=0;
+     int result=0;
+     int action=0;
     cout << "Vvedite pervoe chislo:\n";
     cin >> first_number;
     cout << "Vvedite vtoroe chislo:\n";
     cin >> second_number;
     cout << "Vvedite deistvie:\n";
-    cin >> diya;
-    if (diya >4){
+    cin >> action;
+    if (action >4){
         cout <<"Vvedite chislo ot 1 do 4\n";
-        cin >> diya;
+        cin >> action;
     }
-    switch (diya){
+    switch (action){
     case 1:
         result=first_number+second_number;
         cout << "Resultat:" << result;
@@ -25,11 +27,11 @@ int main()
         result=first_number-second_number;
         cout << "Resultat:" << result;
         break;
-        case 3:
+    case 3:
         result=first_number*second_number;
         cout << "Resultat:" << result;
         break;
-        case 4:
+    case 4:
         result=first_number/second_number;
         cout << "Resultat:" << result;
         break;
