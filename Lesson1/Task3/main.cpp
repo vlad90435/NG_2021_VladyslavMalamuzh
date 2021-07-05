@@ -4,19 +4,17 @@ using namespace std;
 
 int main()
 {
-    int nuts=0;
-    int nuts_in_cone=0;
-    int cones=0;
-    int total=0;
+    int N=0;
+    int K=0;
+    int M=0;
 
     cout << "Skolko nuzhno oreshkov:\n";
-    cin >> nuts;
+    cin >> N;
     cout << "Skolko oreshkov v shiske:\n";
-    cin >> nuts_in_cone;
-    cout << "Skolko ona sobrala:";
-    cin >> shishki;
-    total=nuts_in_cone*cones;
-    if(total<nuts){
+    cin >> K;
+    cout << "Skolko ona sobrala:\n";
+    cin >> M;
+    if(M*K<N){
         cout << "Pechalnaya situatsiya";
 
         }
