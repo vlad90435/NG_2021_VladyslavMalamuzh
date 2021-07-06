@@ -6,7 +6,6 @@ int main()
 {
     int first_number=0;
     int second_number=0;
-    first_number=second_number=0;
     cout << "Vvedite pervoe chislo:\n";
     cin >> first_number;
     cout << "Vvedite vtoroe chislo:\n";
