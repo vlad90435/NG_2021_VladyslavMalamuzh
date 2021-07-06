@@ -11,12 +11,8 @@ int main() {
     cin >> first_number;
     cout << "Vvedite vtoroe chislo:\n";
     cin >> second_number;
-    cout << "Vvedite deistvie:\n";
+    cout << "Vvedite deistvie 1-4 :\n";
     cin >> action;
-    if (action > 4) {
-        cout << "Vvedite chislo ot 1 do 4\n";
-        cin >> action;
-    }
     switch (action) {
     case 1:
       result = first_number + second_number;
@@ -34,5 +30,9 @@ int main() {
       result = first_number / second_number;
       cout << "Resultat:" << result;
       break;
+    default:
+      cout << "Vy vveli nepravilnoe deistvie!";
+      break;
     }
+    return 0;
 }
