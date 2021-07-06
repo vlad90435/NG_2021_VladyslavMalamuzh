@@ -14,25 +14,25 @@ int main() {
     cout << "Vvedite deistvie 1-4 :\n";
     cin >> action;
     switch (action) {
-    case 1:
-      result = first_number + second_number;
-      cout << "Resultat:" << result;
-      break;
-    case 2:
-      result = first_number - second_number;
-      cout << "Resultat:" << result;
-      break;
-    case 3:
-      result = first_number * second_number;
-      cout << "Resultat:" << result;
-      break;
-    case 4:
-      result = first_number / second_number;
-      cout << "Resultat:" << result;
-      break;
-    default:
-      cout << "Vy vveli nepravilnoe deistvie!";
-      break;
+        case 1:
+            result = first_number + second_number;
+            cout << "Resultat:" << result;
+            break;
+        case 2:
+            result = first_number - second_number;
+            cout << "Resultat:" << result;
+            break;
+        case 3:
+            result = first_number * second_number;
+            cout << "Resultat:" << result;
+            break;
+        case 4:
+            result = first_number / second_number;
+            cout << "Resultat:" << result;
+            break;
+        default:
+            cout << "Vy vveli nepravilnoe deistvie!";
+            break;
     }
     return 0;
 }
