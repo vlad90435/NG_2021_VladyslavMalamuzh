@@ -1,22 +1,20 @@
 #include <iostream>
-#include <sstream>
 using namespace std;
 
 int main()
 {
     int salary=0;
-    string words=",no ti molodec";
     cout << "Skolko ti zarabativaesh $$$ ?:\n";
     cin >> salary;
-    switch(salary){
-    case 0 ... 999:
-        cout <<"Rabotai bolshe!"<<words;
-        break;
-    case 1000 ... 999999:
-        cout <<"Kruto"<<words;
-        break;
-    case 1000000 ... 1000000000:
-        cout <<"Da ti millioner";
-        break;
+    if (salary>1000){
+        if (salary<1000000){
+            cout << "Kruto!";
+        }
+    }
+    if (salary<1000){
+        cout << "Rabotai boslhe!,no ti molodec";
+    }
+    if (salary>1000000){
+        cout << "Da ti millioner!";
     }
 }
