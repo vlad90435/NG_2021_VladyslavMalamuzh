@@ -15,7 +15,6 @@ int main()
     cin >> buy;
     switch(buy){
         case 0:
-            storage=8000;
             cout << "Vy vybrali nichego ne pokupat" << endl;
             break;
         case 1:
@@ -64,4 +63,3 @@ int main()
     }
     cout << "Vasha pamyat="<<storage<<"GB";
 }
-
