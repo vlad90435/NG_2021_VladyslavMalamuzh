@@ -1,2 +1,2 @@
-NG_2021 programming courses
-Student: Vladyslav Malamuzh
+NG_2021 programming courses.
+ Student: Vladyslav Malamuzh
