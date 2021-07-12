@@ -3,6 +3,8 @@
 *.layout
 *.cbp
 *.depend
+*/bin/
+*/obj/
 # Compiled Object files
 *.slo
 *.lo
