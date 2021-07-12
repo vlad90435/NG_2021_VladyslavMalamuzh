@@ -11,6 +11,6 @@ int main()
         for(int j=0;square_size>j;j++){
         cout << "*";
         }
-        cout << "\n";
+    cout << "\n";
     }
 }
