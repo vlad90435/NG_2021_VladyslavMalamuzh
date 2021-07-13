@@ -9,8 +9,8 @@ int main()
     cin >> square_size;
     for(int i=0;square_size>i;i++){
         for(int j=0;square_size>j;j++){
-        cout << "*";
+            cout << "*";
         }
-    cout << "\n";
+        cout << endl;
     }
 }
