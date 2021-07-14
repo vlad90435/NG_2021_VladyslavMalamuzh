@@ -7,37 +7,43 @@ int main()
     int size = 0;
     cout << "Enter size: ";
     cin >> size;
-    for (int i = 0; i <= size; i++){ // the cycle started with 0
-        for (int j = 0; j < i; j++){ // The cycle started with the stage when i=1
+    for (int new_line = 0; new_line <= size; new_line++)
+    { 
+        for (int star_output = 0; star_output < new_line; star_output++)
+        { 
             cout << "*";
         }
-        cout << endl; // condition is satisfied as long as i<=size
+        cout << endl; 
     }
     cout << endl;
-    for (int i = size; i > 0; i--){
-        for (int j = 0; j < i; j++){
+    for (int star_output = size; star_output > 0; star_output--)
+    {
+        for (int new_line = 0; star_output > new_line; new_line++)
+        {
             cout << "*";
         }
-        cout << endl; // is always performed until i>0
+        cout << endl; 
     }
     cout << endl;
-    for (int i = size; i > 0; i--){ // i=3 and runs until i is less than 0
-        for (int j = 0; j < size - i; j++){ // j=0 and will be fulfilled from the moment when i=2
-            cout << " "; // will output a blank starts after the first iteration of i
+    for (int star_output = size; star_output > 0; star_output--)
+    { 
+        for (int space_output = 0; space_output < size - star_output; space_output++)
+        { 
+            cout << " "; 
         }
-        for (int k = 0; k < i; k++){ // is always performed until i is less than k
+        for (int new_line = 0; star_output > new_line; new_line++)
+        { 
             cout << "*";
+        }
+        cout << endl; 
     }
-        cout << endl; // is always true as long as i>0
-    }
-    for (int i = 0; i <= size; i++){ // the cycle started with 0
-        for (int j = 0; j < size - i; j++){
+    for (int star_output = 0; star_output <= size; star_output++)
+    { 
+        for (int space_output = 0; space_output < size - star_output; space_output++)
+        {
             cout << " ";
-            /* will print a blank, until j < size -1.
-            on the first iteration of the cycle,the number of gaps will be maximum,then it will gradually decrease
-            */
         }
-        for (int k = 0; k < i; k++) // is always performed until i is less than k
+        for (int new_line = 0; star_output > new_line; new_line++) 
             cout << "*";
         cout << endl;
     }
