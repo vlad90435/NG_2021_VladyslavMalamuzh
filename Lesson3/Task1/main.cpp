@@ -4,17 +4,18 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL,"");
+    setlocale(LC_ALL, "Russian");
+
     short arr[10];
     short school = 0;
     bool school_search = 0;
 
     for (int school_fill = 0; school_fill < 10; school_fill++)
     {
-        cout << "Øêîëà ¹ [" << school_fill + 1 << "]:" << endl;
+        cout << "Ð¨ÐºÐ¾Ð»Ð° â„– [" << school_fill + 1 << "]:" << endl;
         cin >> arr[school_fill];
     }
-    cout << "Ââåäèòå íîìåð âàøåé øêîëû <3 :" << endl;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð²Ð°ÑˆÐµÐ¹ ÑˆÐºÐ¾Ð»Ñ‹ <3 :" << endl;
     cin >> school;
     for (int school_find = 0; school_find < 10; school_find++)
     {
@@ -25,11 +26,11 @@ int main()
     }
     if (school_search == true)
     {
-        cout << "ß çíàþ ýòó øêîëó <3: " << endl;
+        cout << "Ð¯ Ð·Ð½Ð°ÑŽ ÑÑ‚Ñƒ ÑˆÐºÐ¾Ð»Ñƒ <3: " << endl;
     }
     else
     {
-        cout << "ß íå çíàþ ýòó øêîëó :( " << endl;
+        cout << "Ð¯ Ð½Ðµ Ð·Ð½Ð°ÑŽ ÑÑ‚Ñƒ ÑˆÐºÐ¾Ð»Ñƒ :( " << endl;
     }
 }
 
