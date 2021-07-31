@@ -14,17 +14,19 @@ int main()
         {
             str[i]+='A'-'a';
         }
-    cout << str[i];
-    i++;
+        cout << str[i];
+        i++;
     }
 }
     // Another method to do this task
-    /*for (int i = 0; str[i] != '\0'; i++){
+    /*for (int i = 0; str[i] != '\0'; i++)
+    {
         if(str[i]<='z' && str[i]>='a')
         {
             str[i]+='A'-'a';
         }
-    cout << str[i];
+        cout << str[i];
+    }
     */
 
 
