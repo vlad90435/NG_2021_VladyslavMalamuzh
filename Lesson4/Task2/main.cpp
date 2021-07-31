@@ -1,23 +1,34 @@
 #include <iostream>
-#include <string>
-#include <sstream>
 
 using namespace std;
 
 int main() {
+    int pos = 0;
+    int i = 0;
+    int counter = 0;
+    char line [100];
     int max = 0;
-    string line;
-    string biggest_word;
 
-    getline(cin, line); //We get the whole string
-    stringstream str(line); //Getting the object from the string
-    while (str >> biggest_word) // Will loop as long as the input data are valid
+    cout << "Vvedite stroku: " << endl;
+    cin.getline(line, 100);
+
+    while (line[i] != 0)
     {
-        if (biggest_word.size() > max) //Our condition: as long as the word size > max
+        i++;
+        if ((line[i] >= 'a' && line[i] <= 'z') || (line[i] >= 'A' && line[i] <= 'Z'))
         {
-            max = biggest_word.size();
-            line = biggest_word;
+            counter++;
+            if (counter > max)
+            {
+                max = counter;
+                pos = i-max+1;
+            }
         }
+        else counter = 0;
     }
-    cout << line << endl;
+    max += pos;
+    for (int j = pos; j < max; j++)
+    {
+        cout << line[j];
+    }
 }
