@@ -13,13 +13,18 @@ int main()
 
     for (int i = 0; str[i] != '\0'; i++)
     {
-        if(str[i]<='z' && str[i]>='a')
+        if (str[i]<='z' && str[i]>='a')
         {
-            cout << (char) (str[i]-=32);
+            cout << (char) (str[i]+='A'-'a');
+        }
+        else if(str[i]<='Z' && str[i]>='A')
+        {
+            cout << str[i];
         }
         if(!(str[i+1] >= 'A' && str[i+1] <= 'Z') && !(str[i+1] >= 'a' && str[i+1] <= 'z'))
         {
             cout << ' ';
         }
+       
     }
 }
