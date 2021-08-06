@@ -7,32 +7,42 @@ void inputData(char symbols[])
     cout << "Vvedite stroku:" << endl;
     cin.getline(symbols, 100);
 }
-int countWords(char symbols[])
+
+bool counStartOfWords(char symbols[],int i,bool firstCondition)
 {
-    int words = 0;
-    for (int i = 0; symbols[i] != 0; i++)
+    firstCondition = (!(symbols[i+1] >= 'A' && symbols[i+1] <= 'Z') && !(symbols[i+1] >= 'a' && symbols[i+1] <= 'z'));
+    return firstCondition;
+}
+
+bool countSymbolsOfWords(char symbols[],int i,bool secondCondition)
+{
+    secondCondition = ((symbols[i] >= 'A' && symbols[i] <= 'Z') || (symbols[i] >= 'a' && symbols[i] <= 'z'));
+    return secondCondition;
+}
+
+int countWords(bool firstCondition,bool secondCondition,int words)
+{
+    if(firstCondition && secondCondition)
     {
-        if((symbols[i] >= 'A' && symbols[i] <= 'Z') || (symbols[i] >= 'a' && symbols[i] <= 'z'))
-        {
-            if(!(symbols[i+1] >= 'A' && symbols[i+1] <= 'Z') && !(symbols[i+1] >= 'a' && symbols[i+1] <= 'z'))
-            {
-                words++;
-            }
-        }
+        words++;
     }
     return words;
-}
-void outputData(char symbols[])
-{
-    cout << "Kolichestvo slov:" << countWords(symbols) << endl;
 }
 
 int main()
 {
     char symbols[100];
+    int words = 0;
+    bool firstCondition;
+    bool secondCondition;
 
     inputData(symbols);
-    countWords(symbols);
-    outputData(symbols);
 
+    for (int i = 0; symbols[i] != 0; i++)
+    {
+        firstCondition = countSymbolsOfWords(symbols,i,firstCondition);
+        secondCondition = counStartOfWords(symbols,i,secondCondition);
+        words = countWords(firstCondition,secondCondition,words);
+    }
+    cout << words;
 }
