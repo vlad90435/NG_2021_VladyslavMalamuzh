@@ -15,7 +15,7 @@ int main()
     {
         if(str[i]<='z' && str[i]>='a')
         {
-            cout << (char) (str[i]-32);
+            cout << (char) (str[i]-=32);
         }
         if(!(str[i+1] >= 'A' && str[i+1] <= 'Z') && !(str[i+1] >= 'a' && str[i+1] <= 'z'))
         {
