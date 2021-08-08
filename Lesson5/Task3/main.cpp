@@ -2,12 +2,6 @@
 
 using namespace std;
 
-void inputData(char symbols[])
-{
-    cout << "Vvedite stroku:" << endl;
-    cin.getline(symbols, 100);
-}
-
 bool counStartOfWords(char symbols[],int i,bool firstCondition)
 {
     firstCondition = (!(symbols[i+1] >= 'A' && symbols[i+1] <= 'Z') && !(symbols[i+1] >= 'a' && symbols[i+1] <= 'z'));
@@ -36,7 +30,8 @@ int main()
     bool firstCondition;
     bool secondCondition;
 
-    inputData(symbols);
+    cout << "Vvedite stroku:" << endl;
+    cin.getline(symbols, 100);
 
     for (int i = 0; symbols[i] != 0; i++)
     {
