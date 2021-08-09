@@ -13,7 +13,7 @@ int main()
     {
         if (str[i]<='z' && str[i]>='a')
         {
-            cout << (char) (str[i]-=32);
+            cout << (char) (str[i]-32);
         }
         else
         {
