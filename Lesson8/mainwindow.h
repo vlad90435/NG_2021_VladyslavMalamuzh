@@ -20,6 +20,10 @@ private slots:
     void digits_numbers();
     void calc();
 
+    void on_pushB_AC_clicked();
+
+    void on_pushB_equals_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+double firstNum;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -19,6 +21,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushB_9,SIGNAL(clicked()),this,SLOT(digits_numbers()));
     connect(ui->pushB_addition,SIGNAL(clicked()),this,SLOT(calc()));
     connect(ui->pushB_subtraction,SIGNAL(clicked()),this,SLOT(calc()));
+    connect(ui->pushB_multiplication,SIGNAL(clicked()),this,SLOT(calc()));
+    connect(ui->pushB_division,SIGNAL(clicked()),this,SLOT(calc()));
+
+    ui->pushB_subtraction->setCheckable(true);
+    ui->pushB_addition->setCheckable(true);
+    ui->pushB_multiplication->setCheckable(true);
+    ui->pushB_division->setCheckable(true);
 }
 
 MainWindow::~MainWindow()
@@ -30,11 +39,11 @@ void MainWindow::digits_numbers()
 {
     QPushButton  *button = (QPushButton*) sender();
 
-    double storageOfNumbers;
+    double labelNumber;
     QString numbersToString;
 
-    storageOfNumbers = (ui->result->text() + button -> text()).toDouble();
-    numbersToString = QString::number(storageOfNumbers, 'g', 14);
+    labelNumber = (ui->result->text() + button -> text()).toDouble();
+    numbersToString = QString::number(labelNumber, 'g', 14);
 
     ui->result->setText(numbersToString);
 }
@@ -52,14 +61,60 @@ void MainWindow::calc()
 
     button->setChecked(true);
 
-    double storageOfNumbers;
+    firstNum = ui -> result->text().toDouble();
+    ui -> result ->setText("");
+
+}
+
+
+void MainWindow::on_pushB_AC_clicked()
+{
+    ui->pushB_addition->setChecked(false);
+    ui->pushB_subtraction->setChecked(false);
+    ui->pushB_multiplication->setChecked(false);
+    ui->pushB_division->setChecked(false);
+
+    ui->result->setText("");
+}
+void MainWindow::on_pushB_equals_clicked()
+{
+    double labelNumber,secondNumber;
     QString numbersToString;
-    if(button->text() == "+"){
-        storageOfNumbers = (ui->result->text()).toDouble();
-        storageOfNumbers = storageOfNumbers +;
-        numbersToString = QString::number(storageOfNumbers, 'g', 14);
+
+    secondNumber = ui->result->text().toDouble();
+
+
+    if (ui->pushB_addition->isChecked()){
+        labelNumber = firstNum + secondNumber;
+        numbersToString = QString::number(labelNumber, 'g', 14);
+
+        ui->result->setText(numbersToString);
+        ui->pushB_addition->setChecked(false);
     }
+    else if (ui->pushB_subtraction->isChecked()){
+        labelNumber = firstNum - secondNumber;
+        numbersToString = QString::number(labelNumber, 'g', 14);
 
+        ui->result->setText(numbersToString);
+        ui->pushB_subtraction->setChecked(false);
+    }
+    else if (ui->pushB_multiplication->isChecked()){
+        labelNumber = firstNum * secondNumber;
+        numbersToString = QString::number(labelNumber, 'g', 14);
 
-    ui->result->setText(numbersToString);
+        ui->result->setText(numbersToString);
+        ui->pushB_multiplication->setChecked(false);
+    }
+    else if (ui->pushB_division->isChecked()){
+        if (secondNumber == 0){
+             ui->result->setText("Error! You can`t divide 0");
+        }
+        else{
+            labelNumber = firstNum / secondNumber;
+            numbersToString = QString::number(labelNumber, 'g', 14);
+
+            ui->result->setText(numbersToString);
+            ui->pushB_division->setChecked(false);
+        }
+    }
 }
